@@ -28,4 +28,14 @@ class Song
   def self.artists
     @@artists.uniq
   end
+
+  def genre_count
+    genre_count = 0
+    genre_total = {}
+    self.genres.each do|unique_genre|
+      genre_count = @@genres.count(unique_genre)
+      genre_total[unique_genre] = genre_count
+    end
+    genre_total
+  end
 end
